@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
+import TodoStatus from './components/TodoStatus/TodoStatus';
 
 function App() {
   return (
@@ -16,12 +17,16 @@ function App() {
               <Route exact path="/">
                   <Home></Home>
               </Route>
-              <Route path="/home">
+              <Route exact path="/home">
                  <Home></Home>
+              </Route>
+              <Route exact path ={"/home/:statusId"}>
+                  <TodoStatus></TodoStatus>
               </Route>
               <Route path="/about">
                   <About></About>
               </Route>
+              
               <Route path="*">
                 <NotFound></NotFound>
               </Route>
